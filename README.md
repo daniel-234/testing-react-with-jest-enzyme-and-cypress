@@ -30,9 +30,11 @@ The examples on this application have been taken or inspired by the courses I fo
 If you want to install everything from scratch, there are some steps that at the time of this writing need to be taken, as something seems not to be working properly when installing Enzyme.
 For the installation process using `create-react-app`, I followed the official React and Enzyme documentation, that are summarized in this article: [An introduction to testing React components with Enzyme 3](https://javascriptplayground.com/introduction-to-react-tests-enzyme/).
 After the installation, though, some modules were deleted. I was faced with one error when trying to run the tests afterwards:
+
 1. `Error: Cannot find module 'jest-cli'`.
 
 After reinstalling the 'jest-cli' module, another one showed up:
+
 2. `TypeError: environment.setup is not a function`.
 
 The solution suggested on [this issue](https://github.com/facebook/jest/issues/5119) by Dan Abramov (Gaeron) solved the problem.
