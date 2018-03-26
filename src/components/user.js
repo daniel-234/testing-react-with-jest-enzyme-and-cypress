@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import fetchUser from '../utils/utils';
 
-const urlForUser = 'https://jsonplaceholder.typicode.com/users/';
-
-const getUrl = id => urlForUser + id;
+const getUserUrl = id => `https://jsonplaceholder.typicode.com/users/${id}`;
 
 class User extends Component {
 	state = {
@@ -11,20 +9,25 @@ class User extends Component {
 	};
 
 	componentDidMount() {
-		fetchUser(getUrl(1)).then(user => {
+		fetchUser(getUserUrl(1)).then(user => {
 			this.setState({
 				user
-			})
-			console.log(this.state.user.name);
+			});
 		});
 	}
 
 	render() {
-		return (
-			<div>
-				<p>Loading...</p>
-			</div>
-		);
+		return this.state.user === null ?
+			(
+				<div>
+					<p>Loading...</p>
+				</div>
+			) : (
+				<div>
+					<p className='name'>{this.state.user.name}</p>
+					<p className='username'>{this.state.user.username}</p>
+				</div>
+			);
 	}
 }
 
