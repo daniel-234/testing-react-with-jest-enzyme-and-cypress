@@ -3,7 +3,7 @@
 This simple application has been created as an exercise on my way to learn and master testing in JavaScript and TDD development.
 The testing libraries that have been chosen are Jest (developed at Facebook) and Enzyme (developed at Airbnb). At the moment (March 2018) they are the most popular ones among the React Comunity.
 The application has been built using `create-react-app`, which takes care of setting up the development environment and ships with Jest as default testing library.
-The different commits are thought to be either separate features and subsequent steps in the learning process.
+The different commits should either be separate features or subsequent steps in my learning process and in its review, afterwards. They would help me follow my thought process as I updated my code.
 
 ## Getting Started
 
@@ -23,7 +23,8 @@ To test is, run the command `npm test` in a separate command prompt window.
 
 ## Notes
 
-The examples on this application have been taken or inspired by the courses I followed to learn testing in JavaScript, all of them mentioned in the [Acknowledgments](#acknowledgments) section.
+The examples on this application have been taken or inspired by the courses I followed to learn testing in JavaScript, all of them mentioned in the [Acknowledgments](#acknowledgments) section. I highly recommend them, to build your knowledge on the subject step by step.
+The tests to mock a call to an external API are taken from the course [Testing React with Jest and Enzyme](https://javascriptplayground.com/testing-react-enzyme-jest/). The article [But really, what is a JavaScript mock?](https://blog.kentcdodds.com/but-really-what-is-a-javascript-mock-10d060966f7d) by Kent C. Dodds helped me simplify the mock test even further by using a `mock` directory.
 
 ## Notes on the Installation process
 
@@ -51,3 +52,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Frontend Masters - Testing JavaScript Applications (feat. React and Redux) by Kent C. Dodds](https://frontendmasters.com/courses/testing-javascript/)
 * [Egghead - Testing JavaScript with Jest, by Kent C. Dodds](https://egghead.io/playlists/testing-javascript-with-jest-a36c4074)
 * [JavaScript Playground - Testing React with Jest and Enzyme](https://javascriptplayground.com/testing-react-enzyme-jest/)
+* [Medium - But really, what is a JavaScript mock?](https://blog.kentcdodds.com/but-really-what-is-a-javascript-mock-10d060966f7d)
+* [Google Developers - Async Functions: Making Promises Friendly](https://developers.google.com/web/fundamentals/primers/async-functions)
