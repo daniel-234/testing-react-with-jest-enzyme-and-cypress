@@ -1,17 +1,7 @@
 import fetchUser from '../utils/utils';
 
 /*
- * This test has been written to test the API. It can be seen as
- * redundant in this application, as we've already tested it with a
- * mock inside our application.
- * The mock test, though, has been written under the hipothesis that
- * we didn't know the API implementation and we couldn't entirely
- * trust its functionality. Mocking it, we could know if it would
- * break in the future and stop working, making our application fail.
- *
- * This new test has been written to test the API, as if we were its
- * vendors. Having users or customers depending upon it, we should be
- * confident that it works.
+ * Test the API.
  *
  * The two tests are identical and they have been written using both
  * Promises and an Async/Await, to practice them both.
