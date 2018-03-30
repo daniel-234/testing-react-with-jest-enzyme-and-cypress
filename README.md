@@ -25,6 +25,7 @@ To test is, run the command `npm test` in a separate command prompt window.
 
 The examples on this application have been taken or inspired by the courses I followed to learn testing in JavaScript, all of them mentioned in the [Acknowledgments](#acknowledgments) section. I highly recommend them, to build your knowledge on the subject step by step.
 The tests to mock a call to an external API are taken from the course [Testing React with Jest and Enzyme](https://javascriptplayground.com/testing-react-enzyme-jest/). The article [But really, what is a JavaScript mock?](https://blog.kentcdodds.com/but-really-what-is-a-javascript-mock-10d060966f7d) by Kent C. Dodds helped me simplify the mock test even further by using a `mock` directory.
+Instead of using the built-in React Router v4 library, I re-wrote the custom version built by Tyler McGinnis in his course (reference in [Acknowledgments](#acknowledgments)) below. By writing it piece by piece and studying the tests written by the guys who created the official version, it will be shed some light on its inner workings.
 
 ## Notes on the Installation process
 
@@ -54,3 +55,5 @@ This project is licensed under the MIT License.
 * [JavaScript Playground - Testing React with Jest and Enzyme](https://javascriptplayground.com/testing-react-enzyme-jest/)
 * [Medium - But really, what is a JavaScript mock?](https://blog.kentcdodds.com/but-really-what-is-a-javascript-mock-10d060966f7d)
 * [Google Developers - Async Functions: Making Promises Friendly](https://developers.google.com/web/fundamentals/primers/async-functions)
+* [Tyler McGinnis - Build your own React Router v4](https://tylermcginnis.com/build-your-own-react-router-v4/)
+* [React Training GitHub - testing the Route Component](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/modules/__tests__/Route-test.js)
