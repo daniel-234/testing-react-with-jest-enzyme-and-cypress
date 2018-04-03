@@ -12,13 +12,24 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Route from '../utils/custom-router';
 
+describe('A Route render prop', () => {
+
+	test('renders its return value by inlining a function', () => {
+		const TEXT = 'Welcome to Router testing!'
+		const node = document.createElement('div');
+		ReactDOM.render(
+			<Route path='/' render={() => <div>{TEXT}</div>} />,
+			node
+		);
+	});
+});
+
 describe('A Route Component', () => {
 
 	test('renders a component', () => {
 		const TEXT = 'Welcome to Router testing!'
 		const node = document.createElement('div');
 		const Home = () => <div>{TEXT}</div>;
-
 		ReactDOM.render(
 			<Route path='/' component={Home} />,
 			node
