@@ -26,7 +26,34 @@ const matchPath = (pathname, options) => {
 			isExact: true
 		}
 	}
-};
+
+	// Return an array containing the matched text if it finds a match,
+	// otherwise return null.
+	// Get a match for every <Route> in the app, as each of them calls
+	// `matchPath` in its render method.
+	const match = new RexExp(`^${path}`).exec(pathname);
+
+	if (!match) {
+		// There wasn't a match.
+		return null;
+	}
+
+	// Save the matched text from the array into a variable.
+	const url = match[0];
+	const isExact = pathname === url;
+
+	if (exact && !isExact) {
+		// There was a match, but it wasn't an exact
+		// match as specified by the `exact` prop.
+		return null;
+	}
+
+	return {
+		path,
+		url,
+		isExact
+	};
+}
 
 class Route extends Component {
 	static propTypes = {
