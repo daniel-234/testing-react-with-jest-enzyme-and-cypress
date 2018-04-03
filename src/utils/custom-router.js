@@ -10,9 +10,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+/*
+ * Decide if a current URL matches the path of a `Route` component.
+ */
 const matchPath = (pathname, options) => {
+	// Take into account Route's `exact` prop. It will only match if
+	// the path matches the `Location.pathname` exactly.
 	const { exact = false, path } = options;
 
+	// If a Route isn't given a path, it will automatically be rendered.
 	if (!path) {
 		return {
 			path: null,
@@ -49,13 +55,12 @@ class Route extends Component {
 	render() {
 		const { path, exact, component, render } = this.props;
 
-		// const match = matchPath(
-		// 	location.pathname,
-		// 	{ path, exact }
-		// );
-
-		// Force match to a fixed value for our first iteration.
-		const match = ['/'];
+		// `match` is either an object or `null` depending on if there was
+		// a match.
+		const match = matchPath(
+			location.pathname,
+			{ path, exact }
+		);
 
 		// If the current location doesn't match the `path` prop, do nthing.
 		if (!match) {

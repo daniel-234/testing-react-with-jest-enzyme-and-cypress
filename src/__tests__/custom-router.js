@@ -18,7 +18,7 @@ describe('A Route render prop', () => {
 		const TEXT = 'Welcome to Router testing!'
 		const node = document.createElement('div');
 		ReactDOM.render(
-			<Route path='/' render={() => <div>{TEXT}</div>} />,
+			<Route  render={() => <div>{TEXT}</div>} />,
 			node
 		);
 	});
@@ -31,7 +31,7 @@ describe('A Route Component', () => {
 		const node = document.createElement('div');
 		const Home = () => <div>{TEXT}</div>;
 		ReactDOM.render(
-			<Route path='/' component={Home} />,
+			<Route  component={Home} />,
 			node
 		);
 
