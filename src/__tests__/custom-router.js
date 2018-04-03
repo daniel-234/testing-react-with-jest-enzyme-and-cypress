@@ -12,6 +12,21 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Route from '../utils/custom-router';
 
+describe('A Route', () => {
+
+	test('renders at the root', () => {
+		const TEXT = 'Welcome to Router testing!'
+		const node = document.createElement('div');
+
+		ReactDOM.render(
+			<Route path='/' render={() => <h1>{TEXT}</h1>} />,
+			node
+		);
+
+		expect(node.innerHTML).toContain(TEXT);
+	});
+});
+
 describe('A Route Component', () => {
 
 	test('renders automatically a component if it isn\'t given a path', () => {
@@ -20,6 +35,20 @@ describe('A Route Component', () => {
 		const Home = () => <div>{TEXT}</div>;
 		ReactDOM.render(
 			<Route component={Home} />,
+			node
+		);
+
+		expect(node.innerHTML).toContain(TEXT);
+	});
+});
+
+describe('A Route render prop', () => {
+
+	test('renders automatically if it isn\'t given a path', () => {
+		const TEXT = 'Welcome to Router testing!'
+		const node = document.createElement('div');
+		ReactDOM.render(
+			<Route render={() => <div>{TEXT}</div> } />,
 			node
 		);
 

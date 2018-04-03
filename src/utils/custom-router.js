@@ -31,7 +31,7 @@ const matchPath = (pathname, options) => {
 	// otherwise return null.
 	// Get a match for every <Route> in the app, as each of them calls
 	// `matchPath` in its render method.
-	const match = new RexExp(`^${path}`).exec(pathname);
+	const match = new RegExp(`^${path}`).exec(pathname);
 
 	if (!match) {
 		// There wasn't a match.
