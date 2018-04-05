@@ -24,7 +24,7 @@ const matchPath = (pathname, options) => {
 			path: null,
 			url: pathname,
 			isExact: true
-		}
+		};
 	}
 
 	// Return an array containing the matched text if it finds a match,
@@ -53,7 +53,15 @@ const matchPath = (pathname, options) => {
 		url,
 		isExact
 	};
-}
+};
+
+const historyPush = (path) => {
+	history.pushState({}, null, path);
+};
+
+const historyReplace = (path) => {
+	history.replaceState({}, null, path);
+};
 
 class Route extends Component {
 	static propTypes = {
@@ -108,6 +116,29 @@ class Route extends Component {
 		}
 
 		return null;
+	}
+}
+
+class Link extends Component {
+	static propTypes = {
+		to: PropTypes.string.isRequired,
+		replace: PropTypes.bool
+	};
+
+	handleClick = (event) => {
+		const { replace, to } = this.props;
+		event.preventDefault();
+
+		replace ? historyReplace(to) : historyPush(to);
+	};
+
+	render() {
+		const { to, children } = this.props;
+		return (
+			<a href={to} onClick={this.handleClick}>
+				{children}
+			</a>
+		);
 	}
 }
 
