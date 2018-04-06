@@ -87,7 +87,7 @@ class Route extends Component {
 	}
 
 	componentWillUnmount() {
-		addEventListener('popstate', this.handlePop);
+		removeEventListener('popstate', this.handlePop);
 		unregister(this);
 	}
 
