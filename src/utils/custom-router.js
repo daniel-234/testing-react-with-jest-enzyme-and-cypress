@@ -10,6 +10,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+let instances = [];
+
+const register = (comp) => instances.push(comp);
+const unregister = (comp) => instances.splice(instances.indexOf(comp), 1);
+
+const historyPush = (path) => {
+	history.pushState({}, null, path);
+	instances.forEach(instance => instance.forceUpdate());
+};
+
+const historyReplace = (path) => {
+	history.replaceState({}, null, path);
+	instances.forEach(instance => instance.forceUpdate());
+};
+
 /*
  * Decide if a current URL matches the path of a `Route` component.
  */
@@ -55,14 +70,6 @@ const matchPath = (pathname, options) => {
 	};
 };
 
-const historyPush = (path) => {
-	history.pushState({}, null, path);
-};
-
-const historyReplace = (path) => {
-	history.replaceState({}, null, path);
-};
-
 class Route extends Component {
 	static propTypes = {
 		exact: PropTypes.bool,
@@ -76,10 +83,12 @@ class Route extends Component {
 		// HTML5's `popstate` event will be fired whenever the user
 		// clicks on the forward or back button.
 		addEventListener('popstate', this.handlePop);
+		register(this);
 	}
 
 	componentWillUnmount() {
 		addEventListener('popstate', this.handlePop);
+		unregister(this);
 	}
 
 	// Force a re-render (it happens when the `popstate` event is fired).
