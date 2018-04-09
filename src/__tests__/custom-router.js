@@ -10,10 +10,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Route from '../utils/custom-router';
+import { Route, Link } from '../utils/custom-router';
 
 describe('A Route', () => {
-
 	test('renders at the root', () => {
 		const TEXT = 'Welcome to Router testing!'
 		const node = document.createElement('div');
@@ -28,11 +27,11 @@ describe('A Route', () => {
 });
 
 describe('A Route Component', () => {
-
 	test('renders automatically a component if it isn\'t given a path', () => {
 		const TEXT = 'Welcome to Router testing!'
 		const node = document.createElement('div');
 		const Home = () => <div>{TEXT}</div>;
+
 		ReactDOM.render(
 			<Route component={Home} />,
 			node
@@ -43,15 +42,47 @@ describe('A Route Component', () => {
 });
 
 describe('A Route render prop', () => {
-
 	test('renders automatically if it isn\'t given a path', () => {
 		const TEXT = 'Welcome to Router testing!'
 		const node = document.createElement('div');
+
 		ReactDOM.render(
 			<Route render={() => <div>{TEXT}</div> } />,
 			node
 		);
 
 		expect(node.innerHTML).toContain(TEXT);
+	});
+});
+
+describe('A Link', () => {
+	test('accepts a location "to" prop', () => {
+		const location = '/some/path';
+		const node = document.createElement('div');
+
+		ReactDOM.render(
+			<Link to={location}>link</Link>,
+			node
+		);
+
+		const href = node.querySelector('a').getAttribute('href');
+
+		expect(href).toEqual('/some/path');
+	});
+
+	test('throws with no "to" prop', () => {
+		const node = document.createElement('div');
+
+		spyOn(console, 'error');
+
+		ReactDOM.render(
+			<Link>link</Link>,
+			node
+		);
+
+		expect(console.error.calls.count()).toBe(1);
+		expect(console.error.calls.argsFor(0)[0]).toContain(
+			'The prop `to` is marked as required in `Link`'
+		);
 	});
 });

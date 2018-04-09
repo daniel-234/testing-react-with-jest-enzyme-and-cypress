@@ -87,8 +87,8 @@ class Route extends Component {
 	}
 
 	componentWillUnmount() {
-		removeEventListener('popstate', this.handlePop);
 		unregister(this);
+		removeEventListener('popstate', this.handlePop);
 	}
 
 	// Force a re-render (it happens when the `popstate` event is fired).
@@ -151,4 +151,4 @@ class Link extends Component {
 	}
 }
 
-export default Route;
+export { Route, Link };
