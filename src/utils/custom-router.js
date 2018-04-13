@@ -26,9 +26,13 @@ const historyReplace = (path) => {
 };
 
 /*
- * Decide if a current URL matches the path of a `Route` component.
+ * Public API for matching a URL pathname to a path pattern.
  */
-const matchPath = (pathname, options) => {
+const matchPath = (pathname, options = {}) => {
+	// If the second parameter is given as a string, assign it as
+	// value of a `path` key inside an options object (code taken
+	// from the official React Router API).
+	if (typeof options === 'string') options = { path: options };
 	// Take into account Route's `exact` prop. It will only match if
 	// the path matches the `Location.pathname` exactly.
 	const { exact = false, path } = options;
