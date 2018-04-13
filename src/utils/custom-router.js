@@ -151,4 +151,4 @@ class Link extends Component {
 	}
 }
 
-export { Route, Link };
+export { Route, Link, matchPath };

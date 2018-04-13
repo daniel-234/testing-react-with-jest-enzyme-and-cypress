@@ -10,7 +10,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { Route, Link } from '../utils/custom-router';
+import { Route, Link, matchPath } from '../utils/custom-router';
 
 describe('A Route', () => {
 	test('renders at the root', () => {
@@ -84,5 +84,24 @@ describe('A Link', () => {
 		expect(console.error.calls.argsFor(0)[0]).toContain(
 			'The prop `to` is marked as required in `Link`'
 		);
+	});
+});
+
+// Tests taken from official `react-router` tests.
+describe('matchPath', () => {
+	describe('with path="/"', () => {
+		test('it returns correct url at "/"', () => {
+			const path = '/';
+			const pathname = '/';
+			const match = matchPath(pathname, path);
+			expect(match.url).toBe('/');
+		});
+
+		test('it returns the correct url at "/somewhere/else"', () => {
+			const path = '/';
+			const pathname = '/somewhere';
+			const match = matchPath(pathname, path);
+			expect(match.url).toBe('/');
+		});
 	});
 });
