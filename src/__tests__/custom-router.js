@@ -87,8 +87,8 @@ describe('A Link', () => {
 	});
 });
 
-// Tests taken from official `react-router` tests.
-describe('matchPath', () => {
+// Tests taken from the official `react-router v4` repository.
+describe('The matchPath function', () => {
 	describe('with path="/"', () => {
 		test('it returns correct url at "/"', () => {
 			const path = '/';
@@ -102,6 +102,48 @@ describe('matchPath', () => {
 			const pathname = '/somewhere';
 			const match = matchPath(pathname, path);
 			expect(match.url).toBe('/');
+		});
+	});
+
+	describe('with path="/somewhere"', () => {
+		test('returns the correct url at "/somewhere"', () => {
+			const path = '/somewhere';
+			const pathname = '/somewhere';
+			const match = matchPath(pathname, path);
+			expect(match.url).toBe('/somewhere');
+		});
+
+		test('returns the correct url at "/somewhere/else"', () => {
+			const path = '/somewhere';
+			const pathname = '/somewhere/else';
+			const match = matchPath(pathname, path);
+			expect(match.url).toBe('/somewhere');
+		});
+	});
+
+	describe('with an options object', () => {
+		test('returns the correct url if there is a path', () => {
+			const options = {
+				path: '/somewhere'
+			};
+			const pathname = '/somewhere';
+			const match = matchPath(pathname, options);
+			expect(match.url).toBe('/somewhere');
+		});
+
+		test('renders automatically if there\'s no path', () => {
+			const pathname = '/some/path';
+			const match = matchPath(pathname);
+			expect(match.url).toBe('/some/path');
+		});
+
+		test('returns null if there\'s no match', () => {
+			const options = {
+				path: '/some/path'
+			};
+			const pathname = 'another/path';
+			const match = matchPath(pathname, options);
+			expect(match).toBe(null);
 		});
 	});
 });
