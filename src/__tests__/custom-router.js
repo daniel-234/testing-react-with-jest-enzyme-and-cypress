@@ -147,3 +147,33 @@ describe('The matchPath function', () => {
 		});
 	});
 });
+
+describe('Integration Tests', () => {
+	test('render multiple matching routes', () => {
+		const node = document.createElement('div');
+		const TEXT1 = 'Apples';
+		const TEXT2 = 'Oranges';
+		const TEXT3 = 'Peaches';
+
+		ReactDOM.render(
+			<div>
+				<ul>
+					<li>
+						<Route path='/' render={() => <h1>{TEXT1}</h1>} />
+					</li>
+					<li>
+						<Route path='/' render={() => <h1>{TEXT2}</h1>} />
+					</li>
+					<li>
+						<Route path='/' render={() => <h1>{TEXT3}</h1>} />
+					</li>
+				</ul>
+			</div>,
+			node
+		);
+
+		expect(node.innerHTML).toContain(TEXT1);
+		expect(node.innerHTML).toContain(TEXT2);
+		expect(node.innerHTML).toContain(TEXT3);
+	});
+});
