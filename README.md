@@ -57,3 +57,5 @@ This project is licensed under the MIT License.
 * [Google Developers - Async Functions: Making Promises Friendly](https://developers.google.com/web/fundamentals/primers/async-functions)
 * [Tyler McGinnis - Build your own React Router v4](https://tylermcginnis.com/build-your-own-react-router-v4/)
 * [React Training GitHub - testing the Route Component](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/modules/__tests__/Route-test.js)
+* [Stackoverflow - Updating address bar with new URL without hash or reloading the page](https://stackoverflow.com/questions/3338642/updating-address-bar-with-new-url-without-hash-or-reloading-the-page)
+* [MDN Web Docs - Manipulating the browser history](https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method)
