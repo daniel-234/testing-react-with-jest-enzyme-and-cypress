@@ -34,7 +34,7 @@ const matchPath = (pathname, options = {}) => {
 	// from the official React Router API).
 	if (typeof options === 'string') options = { path: options };
 	// Take into account Route's `exact` prop. It will only match if
-	// the path matches the `Location.pathname` exactly.
+	// the path matches the `location.pathname` exactly.
 	const { exact = false, path } = options;
 
 	// If a Route isn't given a path, it will automatically be rendered.

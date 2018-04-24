@@ -24,6 +24,20 @@ describe('A Route', () => {
 
 		expect(node.innerHTML).toContain(TEXT);
 	});
+
+	test('does not render when it does not match', () => {
+		const TEXT = 'Should not be rendered';
+		const node = document.createElement('div');
+
+		window.history.pushState('flowers URL', 'flowers', '/flowers');
+
+		ReactDOM.render(
+			<Route path='/trees' render={() => <h1>{TEXT}</h1>} />,
+			node
+		);
+
+		expect(node.innerHTML).not.toContain(TEXT);
+	});
 });
 
 describe('A Route Component', () => {
