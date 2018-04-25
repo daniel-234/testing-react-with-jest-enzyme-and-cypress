@@ -175,6 +175,16 @@ describe('The matchPath function', () => {
 			const match = matchPath(pathname, options);
 			expect(match).toBe(null);
 		});
+
+		test('returns null if there\'s no exact match', () => {
+			const options = {
+				path: '/some',
+				exact: true
+			};
+			const pathname = '/some/path';
+			const match = matchPath(pathname, options);
+			expect(match).toBe(null);
+		});
 	});
 });
 
