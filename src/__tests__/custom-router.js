@@ -25,11 +25,27 @@ describe('A Route', () => {
 		expect(node.innerHTML).toContain(TEXT);
 	});
 
+	test('renders a path different from the root', () => {
+		const TEXT = 'Oranges';
+		const node = document.createElement('div');
+
+		// Modify the state object of the current history entry.
+		window.history.replaceState('fruits URL', 'fruits', '/fruits');
+
+		ReactDOM.render(
+			<Route path='/fruits' render={() => <h1>{TEXT}</h1>} />,
+			node
+		);
+
+		expect(node.innerHTML).toContain(TEXT);
+
+		// Set back the history state to the root URL.
+		window.history.replaceState('root URL', 'root', '/');
+	});
+
 	test('does not render when it does not match', () => {
 		const TEXT = 'Should not be rendered';
 		const node = document.createElement('div');
-
-		window.history.pushState('flowers URL', 'flowers', '/flowers');
 
 		ReactDOM.render(
 			<Route path='/trees' render={() => <h1>{TEXT}</h1>} />,
@@ -164,10 +180,10 @@ describe('The matchPath function', () => {
 
 describe('Integration Tests', () => {
 	test('render multiple matching routes', () => {
-		const node = document.createElement('div');
 		const TEXT1 = 'Apples';
 		const TEXT2 = 'Oranges';
 		const TEXT3 = 'Peaches';
+		const node = document.createElement('div');
 
 		ReactDOM.render(
 			<div>
@@ -189,5 +205,53 @@ describe('Integration Tests', () => {
 		expect(node.innerHTML).toContain(TEXT1);
 		expect(node.innerHTML).toContain(TEXT2);
 		expect(node.innerHTML).toContain(TEXT3);
+	});
+
+	test('render nested matches', () => {
+		const TEXT1 = 'Apples';
+		const TEXT2 = 'Oranges';
+		const node = document.createElement('div');
+
+		window.history.replaceState('nested URL', 'fruits', '/fruits');
+
+		ReactDOM.render(
+			<Route
+				path='/'
+				render={() => (
+					<div>
+						<h1>{TEXT1}</h1>
+						<Route path='/fruits' render={() => <h2>{TEXT2}</h2>} />
+					</div>
+				)}
+			/>,
+			node
+		);
+
+		expect(node.innerHTML).toContain(TEXT1);
+		expect(node.innerHTML).toContain(TEXT2);
+
+		window.history.replaceState('root URL', 'root', '/');
+	});
+
+	test('Renders only as deep as the matching Route', () => {
+		const TEXT1 = 'Apples';
+		const TEXT2 = 'Oranges';
+		const node = document.createElement('div');
+
+		ReactDOM.render(
+			<Route
+				path='/'
+				render={() => (
+					<div>
+						<h1>{TEXT1}</h1>
+						<Route path='/fruits' render={() => <h2>{TEXT2}</h2>} />
+					</div>
+				)}
+			/>,
+			node
+		);
+
+		expect(node.innerHTML).toContain(TEXT1);
+		expect(node.innerHTML).not.toContain(TEXT2);
 	});
 });
