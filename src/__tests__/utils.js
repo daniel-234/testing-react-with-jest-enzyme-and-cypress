@@ -1,4 +1,4 @@
-import fetchUser from '../utils/utils';
+import fetchUser from "../utils/utils";
 
 /*
  * Test the API.
@@ -10,25 +10,25 @@ import fetchUser from '../utils/utils';
  *
  */
 
-const urlForUser1 = 'https://jsonplaceholder.typicode.com/users/1';
+const urlForUser1 = "https://jsonplaceholder.typicode.com/users/1";
 
 /*
  * Test the API using Async/Await.
  */
-test('it fetches the correct data', async () => {
+test("it fetches the correct data", async () => {
 	expect.assertions(1);
 
 	const data = await fetchUser(urlForUser1);
-	expect(data.username).toBe('Bret');
+	expect(data.username).toBe("Bret");
 });
 
 /*
  * Test the API using Promises.
  */
-test('it fetches the correct data', () => {
+test("it fetches the correct data", () => {
 	expect.assertions(1);
 
 	return fetchUser(urlForUser1).then(data => {
-		expect(data.username).toBe('Bret');
+		expect(data.username).toBe("Bret");
 	});
 });

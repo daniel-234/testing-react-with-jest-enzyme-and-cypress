@@ -1,5 +1,8 @@
 # Testing React with Jest and Enzyme
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+
 This simple application has been created as an exercise on my way to learn and master testing in JavaScript and TDD development.
 The testing libraries that have been chosen are Jest (developed at Facebook) and Enzyme (developed at Airbnb). At the moment (March 2018) they are the most popular ones among the React Comunity.
 The application has been built using `create-react-app`, which takes care of setting up the development environment and ships with Jest as default testing library.

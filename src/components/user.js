@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import fetchUser from '../utils/utils';
+import React, { Component } from "react";
+import fetchUser from "../utils/utils";
 
 const getUserUrl = id => `https://jsonplaceholder.typicode.com/users/${id}`;
 
@@ -17,17 +17,17 @@ class User extends Component {
 	}
 
 	render() {
-		return this.state.user === null ?
-			(
-				<div>
-					<p>Loading...</p>
-				</div>
-			) : (
-				<div>
-					<p className='name'>{this.state.user.name}</p>
-					<p className='username'>{this.state.user.username}</p>
-				</div>
-			);
+		console.log(this.state.user);
+		return this.state.user === null ? (
+			<div>
+				<p>Loading...</p>
+			</div>
+		) : (
+			<div>
+				<p className="name">{this.state.user.name}</p>
+				<p className="username">{this.state.user.username}</p>
+			</div>
+		);
 	}
 }
 
