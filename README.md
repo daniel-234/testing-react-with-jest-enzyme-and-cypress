@@ -62,3 +62,4 @@ This project is licensed under the MIT License.
 - [Stackoverflow - Updating address bar with new URL without hash or reloading the page](https://stackoverflow.com/questions/3338642/updating-address-bar-with-new-url-without-hash-or-reloading-the-page)
 - [MDN Web Docs - Manipulating the browser history](<https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method>)
 - [39Digits - Configure Prettier and ESLint in Visual Studio Code](https://www.39digits.com/configure-prettier-and-eslint-in-visual-studio-code/)
+- [39Digits - Automatically format your JavaScript commits using Prettier and Husky](https://www.39digits.com/automatically-format-your-javascript-commits-using-prettier-and-husky/)
