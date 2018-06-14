@@ -13,24 +13,24 @@ jest.mock('../utils/utils');
  * Adds the code that follows it to the end of the event loop queue.
  */
 function nextTick() {
-	return new Promise(resolve => {
-		setTimeout(resolve, 0);
-	});
+  return new Promise(resolve => {
+    setTimeout(resolve, 0);
+  });
 }
 
 test('it shows a loading text before fetching a user', async () => {
-	const wrapper = shallow(<User id={1} />);
-	const text = wrapper.find('p').text();
+  const wrapper = shallow(<User id={1} />);
+  const text = wrapper.find('p').text();
 
-	expect(text).toBe('Loading...');
+  expect(text).toBe('Loading...');
 });
 
 test('it returns the right username once the data has been fetched', async () => {
-	const wrapper = shallow(<User id={1} />);
+  const wrapper = shallow(<User id={1} />);
 
-	await nextTick();
-	wrapper.update();
+  await nextTick();
+  wrapper.update();
 
-	const text = wrapper.find('p.username').text();
-	expect(text).toEqual('Bret');
+  const text = wrapper.find('p.username').text();
+  expect(text).toEqual('Bret');
 });

@@ -5,9 +5,9 @@
 
 // Builds a user object, with the properties we want to test.
 const fakeUser = {
-	id: 1,
-	name: 'Leanne Graham',
-	username: 'Bret'
+  id: 1,
+  name: 'Leanne Graham',
+  username: 'Bret'
 };
 
 /*
@@ -15,7 +15,7 @@ const fakeUser = {
  * object value.
  */
 const fetchUser = jest.fn(url => {
-	return Promise.resolve(fakeUser);
+  return Promise.resolve(fakeUser);
 });
 
 export default fetchUser;
