@@ -11,13 +11,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "format": "prettier --write \"**/*.{js,jsx}\"",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-prettier": "^2.6.0",
     "prettier": "1.13.5",
