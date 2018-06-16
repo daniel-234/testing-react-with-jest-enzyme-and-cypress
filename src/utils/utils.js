@@ -2,6 +2,7 @@
  * Gets the user data from a given url.
  */
 
+// @flow
 async function fetchUser(url) {
   const response = await fetch(url);
   const data = await response.json();

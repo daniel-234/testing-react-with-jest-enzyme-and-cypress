@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import User from './user';
 import logo from '../logo.svg';

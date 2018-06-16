@@ -3,6 +3,8 @@
  * mocking implementation.
  */
 
+// @flow
+
 // Builds a user object, with the properties we want to test.
 const fakeUser = {
   id: 1,
