@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react';
 import fetchUser from '../utils/utils';
 

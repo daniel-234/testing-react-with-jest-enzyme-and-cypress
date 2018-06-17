@@ -44,14 +44,7 @@ After reinstalling the 'jest-cli' module, another one showed up:
 The solution suggested on [this issue](https://github.com/facebook/jest/issues/5119) by Dan Abramov (Gaeron) solved the problem.
 Here is what he wrote: "If you have both `react-scripts` and `jest` in your `package.json`, delete `jest` from it. Then delete `package-lock.json`, `yarn.lock` and `node_modules`. Then run `npm install` (or `yarn` if you use it)."
 
-By just cloning the application and running `npm install` on your terminal, none of the above errors should show up.
-
-## Notes on Jest, Flow and `create-react-app`.
-
-Jest, like many other JavaScipt libraries, is not written with Flow types. That causes Flow to output error messages about files that contain untyped code. To solve this issue Flow supports the concept of a "library definition" that needs to be grabbed from the `flow-typed` repository. The solution chosen for this project is the CLI which can was installed as an npm module. 
-We then need to install the library definitions for the third-party libraries we use and that are not annotated, as listed in the `flow-typed` repository. 
-
-IMPORTANT: `flow-typed`, when installed, looks in the `devDependencies` property for the third-party libraries in use in the project. As this project was built using `create-react-app`, it was necessary to list Jest in the `devDependencies` property in the `package.json` file, as it's not inserted there by default. See also [this](https://github.com/facebook/create-react-app/issues/453) issue. 
+By just cloning the application and running `npm install` on your terminal, none of the above errors would show up.
 
 ## License
 
@@ -70,4 +63,3 @@ This project is licensed under the MIT License.
 - [MDN Web Docs - Manipulating the browser history](<https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method>)
 - [39Digits - Configure Prettier and ESLint in Visual Studio Code](https://www.39digits.com/configure-prettier-and-eslint-in-visual-studio-code/)
 - [39Digits - Automatically format your JavaScript commits using Prettier and Husky](https://www.39digits.com/automatically-format-your-javascript-commits-using-prettier-and-husky/)
-- [Luca Pette - Using Flow and Jest](http://lucapette.me/using-flow-and-jest)

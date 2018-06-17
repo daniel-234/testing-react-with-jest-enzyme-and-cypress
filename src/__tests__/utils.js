@@ -1,4 +1,3 @@
-// @flow
 import fetchUser from '../utils/utils';
 
 /*

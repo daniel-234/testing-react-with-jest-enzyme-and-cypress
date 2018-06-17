@@ -7,8 +7,6 @@
  * React Router library in this specific case.
  *
  */
-
-// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
