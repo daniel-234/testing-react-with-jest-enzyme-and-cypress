@@ -10,7 +10,7 @@ The different commits should either be separate features or subsequent steps in 
 ## Getting Started
 
 To install this application you can (fork and) download it and then run the command `npm install` from your console.
-To launch it, after the installation has successfully complete, launch it with the command `npm start`.
+After the installation has successfully complete, you can launch it with the command `npm start`.
 To test is, run the command `npm test` in a separate command prompt window.
 
 ## Built With
@@ -45,6 +45,11 @@ The solution suggested on [this issue](https://github.com/facebook/jest/issues/5
 Here is what he wrote: "If you have both `react-scripts` and `jest` in your `package.json`, delete `jest` from it. Then delete `package-lock.json`, `yarn.lock` and `node_modules`. Then run `npm install` (or `yarn` if you use it)."
 
 By just cloning the application and running `npm install` on your terminal, none of the above errors would show up.
+
+## Notes on Flow, flow-typed and Visual Studio Code. 
+
+As Visual Studio Code has been used as IDE for this project and there seems to be [issues](https://github.com/flowtype/flow-for-vscode/issues/240) about the extension it uses to support Flow, this project commits regarding Flow have been reverted.   
+All code regarding Flow has been moved to another branch, while in the master branch it will be only added type checking with PropTypes. 
 
 ## License
 
