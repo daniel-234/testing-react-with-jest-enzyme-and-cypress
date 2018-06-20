@@ -46,7 +46,7 @@ Here is what he wrote: "If you have both `react-scripts` and `jest` in your `pac
 
 By just cloning the application and running `npm install` on your terminal, none of the above errors would show up.
 
-## Notes on Flow, flow-typed and Visual Studio Code. 
+## Notes on Flow, flow-typed and Visual Studio Code
 
 As Visual Studio Code has been used as IDE for this project and there seems to be [issues](https://github.com/flowtype/flow-for-vscode/issues/240) about the extension it uses to support Flow, this project commits regarding Flow have been reverted.   
 All code regarding Flow has been moved to another branch, while in the master branch it will be only added type checking with PropTypes. 
@@ -68,3 +68,4 @@ This project is licensed under the MIT License.
 - [MDN Web Docs - Manipulating the browser history](<https://developer.mozilla.org/en-US/docs/Web/API/History_API#The_pushState()_method>)
 - [39Digits - Configure Prettier and ESLint in Visual Studio Code](https://www.39digits.com/configure-prettier-and-eslint-in-visual-studio-code/)
 - [39Digits - Automatically format your JavaScript commits using Prettier and Husky](https://www.39digits.com/automatically-format-your-javascript-commits-using-prettier-and-husky/)
+- [Stackoverflow - Unexpected use of no restricted globals](https://stackoverflow.com/questions/50058258/unexpected-use-of-screen-no-restricted-globals-reactjs)

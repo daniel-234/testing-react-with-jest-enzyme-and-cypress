@@ -14,6 +14,10 @@ let instances = [];
 
 const register = comp => instances.push(comp);
 const unregister = comp => instances.splice(instances.indexOf(comp), 1);
+// Read the global variable explicitly from the global object.
+// Comply to ESLint rules.
+const history = window.history;
+const location = window.location;
 
 const historyPush = path => {
   history.pushState({}, null, path);
@@ -86,13 +90,13 @@ class Route extends Component {
   componentWillMount() {
     // HTML5's `popstate` event will be fired whenever the user
     // clicks on the forward or back button.
-    addEventListener('popstate', this.handlePop);
+    window.addEventListener('popstate', this.handlePop);
     register(this);
   }
 
   componentWillUnmount() {
     unregister(this);
-    removeEventListener('popstate', this.handlePop);
+    window.removeEventListener('popstate', this.handlePop);
   }
 
   // Force a re-render (it happens when the `popstate` event is fired).
