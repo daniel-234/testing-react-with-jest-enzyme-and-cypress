@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import User from './user';
+import UsersList from './users-list';
 import UserDetails from './user-details';
 import logo from '../logo.svg';
 import '../App.css';
-import { Route, Link } from '../utils/custom-router';
+import { Route } from '../utils/custom-router';
 
 class App extends Component {
   render() {
@@ -16,8 +16,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <User id={1} />
-        <Link to="/user">User</Link>
+        <Route exact path="/" component={UsersList} />
         <Route path="/user" component={UserDetails} />
       </div>
     );

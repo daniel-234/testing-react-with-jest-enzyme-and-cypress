@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import User from './user';
+import { Link } from '../utils/custom-router';
 
-class UserDetails extends Component {
+class UsersList extends Component {
   render() {
     return (
       <div>
         <User id={1} />
+        <Link to="/user">User Details</Link>
       </div>
     );
   }
 }
 
-export default UserDetails;
+export default UsersList;
