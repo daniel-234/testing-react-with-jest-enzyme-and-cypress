@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import User from './user';
+import UserDetails from './user-details';
 import logo from '../logo.svg';
 import '../App.css';
+import { Route, Link } from '../utils/custom-router';
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <User id={1} />
+        <Link to="/user">User</Link>
+        <Route path="/user" component={UserDetails} />
       </div>
     );
   }
