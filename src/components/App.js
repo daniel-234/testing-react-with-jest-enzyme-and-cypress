@@ -4,8 +4,21 @@ import UserDetails from './user-details';
 import logo from '../logo.svg';
 import '../App.css';
 import { Route } from '../utils/custom-router';
+import fetchUser from '../utils/utils';
+
+const getAllUsers = () => 'https://jsonplaceholder.typicode.com/users';
 
 class App extends Component {
+  state = {
+    users: []
+  };
+
+  componentDidMount() {
+    fetchUser(getAllUsers()).then(users => {
+      this.setState({ users });
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -16,8 +29,18 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Route exact path="/" component={UsersList} />
-        <Route path="/user" component={UserDetails} />
+        <Route
+          exact
+          path="/"
+          render={() => <UsersList users={this.state.users} />}
+        />
+        {this.state.users.map(user => (
+          <Route
+            key={user.id}
+            path={`/${user.id}`}
+            render={() => <UserDetails id={user.id} />}
+          />
+        ))}
       </div>
     );
   }

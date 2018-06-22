@@ -111,7 +111,7 @@ class Route extends Component {
     // a match.
     const match = matchPath(location.pathname, { path, exact });
 
-    // If the current location doesn't match the `path` prop, do nthing.
+    // If the current location doesn't match the `path` prop, do nothing.
     if (!match) {
       return null;
     }
