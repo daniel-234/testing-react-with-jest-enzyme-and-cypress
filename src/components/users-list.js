@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import User from './user';
-import { Link, Route } from '../utils/custom-router';
-import UserDetails from './user-details';
+import { Link } from '../utils/custom-router';
 
 class UsersList extends Component {
   static propTypes = {

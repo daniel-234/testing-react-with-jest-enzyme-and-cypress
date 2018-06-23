@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UsersList from './users-list';
-import UserDetails from './user-details';
+import User from './user';
 import logo from '../logo.svg';
 import '../App.css';
 import { Route } from '../utils/custom-router';
@@ -38,7 +38,7 @@ class App extends Component {
           <Route
             key={user.id}
             path={`/${user.id}`}
-            render={() => <UserDetails id={user.id} />}
+            render={() => <User id={user.id} />}
           />
         ))}
       </div>

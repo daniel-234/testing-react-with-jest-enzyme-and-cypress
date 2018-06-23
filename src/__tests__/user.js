@@ -18,12 +18,16 @@ function nextTick() {
   });
 }
 
-test('it shows a loading text before fetching a user', async () => {
-  const wrapper = shallow(<User id={1} />);
-  const text = wrapper.find('p').text();
+// TODO
+//
+// decide about showing a 'loading' text later, otherwise delete it
+//
+// test('it shows a loading text before fetching a user', async () => {
+//   const wrapper = shallow(<User id={1} />);
+//   const text = wrapper.find('p').text();
 
-  expect(text).toBe('Loading...');
-});
+//   expect(text).toBe('Loading...');
+// });
 
 test('it returns the right username once the data has been fetched', async () => {
   const wrapper = shallow(<User id={1} />);
@@ -31,6 +35,6 @@ test('it returns the right username once the data has been fetched', async () =>
   await nextTick();
   wrapper.update();
 
-  const text = wrapper.find('p.username').text();
-  expect(text).toEqual('Bret');
+  const text = wrapper.find('p.id').text();
+  expect(text).toEqual('User 1');
 });
