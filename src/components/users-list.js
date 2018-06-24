@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from '../utils/custom-router';
+import styled from 'react-emotion';
+
+const Container = styled('ol')`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+`;
 
 class UsersList extends Component {
   static propTypes = {
@@ -11,7 +17,7 @@ class UsersList extends Component {
     const { users } = this.props;
     return (
       <div>
-        <ol>
+        <Container>
           {users.map(user => (
             <li key={user.id} className="single-user">
               <div>
@@ -21,7 +27,7 @@ class UsersList extends Component {
               <Link to={`/${user.id}`}>User Details</Link>
             </li>
           ))}
-        </ol>
+        </Container>
       </div>
     );
   }
