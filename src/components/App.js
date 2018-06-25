@@ -29,7 +29,7 @@ class App extends Component {
           <Route
             key={user.id}
             path={`/${user.id}`}
-            render={() => <User id={user.id} />}
+            render={() => <User user={user} />}
           />
         ))}
       </div>
