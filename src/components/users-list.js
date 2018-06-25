@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
+import UserItem from './user-item';
 import PropTypes from 'prop-types';
-import { Link } from '../utils/custom-router';
 import styled from 'react-emotion';
 import logo from '../logo.svg';
 import '../App.css';
 
+// Add CSS-in-JS styling with Emotion.js.
 const UnorderedList = styled('ul')`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   list-style-type: none;
+  padding: 1em;
+  grid-template-columns: repeat(5, 1fr);
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 class UsersList extends Component {
@@ -28,21 +38,7 @@ class UsersList extends Component {
           Here is a list of users. Click a link for more details.
         </p>
         <UnorderedList>
-          {users.map(user => (
-            <li key={user.id} className="single-user">
-              <div>
-                <picture>
-                  <img
-                    src="../../images/avatar1_small.jpg"
-                    alt="Avatar image"
-                  />
-                </picture>
-                <p className="name">{user.name}</p>
-                <p className="username">{user.username}</p>
-              </div>
-              <Link to={`/${user.id}`}>User Details</Link>
-            </li>
-          ))}
+          {users.map(user => <UserItem user={user} />)}
         </UnorderedList>
       </div>
     );
