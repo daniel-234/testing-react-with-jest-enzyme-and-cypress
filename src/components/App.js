@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    return (
+    return this.state.users.length ? (
       <div className="App">
         <Route
           exact
@@ -32,6 +32,10 @@ class App extends Component {
             render={() => <User user={user} />}
           />
         ))}
+      </div>
+    ) : (
+      <div>
+        <p>Loading...</p>
       </div>
     );
   }
