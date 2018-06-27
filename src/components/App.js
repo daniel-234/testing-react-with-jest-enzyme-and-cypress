@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UsersList from './users-list';
 import User from './user';
 import { Route } from '../utils/custom-router';
-import fetchUser from '../utils/utils';
+import fetchUsersList from '../utils/utils';
 
 const getAllUsers = () => 'https://jsonplaceholder.typicode.com/users';
 
@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetchUser(getAllUsers()).then(users => {
+    fetchUsersList(getAllUsers()).then(users => {
       this.setState({ users });
     });
   }

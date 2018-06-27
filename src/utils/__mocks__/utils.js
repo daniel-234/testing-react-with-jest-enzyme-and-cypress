@@ -4,18 +4,30 @@
  */
 
 // Builds a user object, with the properties we want to test.
-const fakeUser = {
-  id: 1,
-  name: 'Leanne Graham',
-  username: 'Bret'
-};
+const fakeUsersList = [
+  {
+    id: 1,
+    name: 'Leanne Graham',
+    username: 'Bret'
+  },
+  {
+    id: 2,
+    name: 'Ervin Howell',
+    username: 'Antonette'
+  },
+  {
+    id: 3,
+    name: 'Clementine Bauch',
+    username: 'Samantha'
+  }
+];
 
 /*
  * Returns a Promise that is resolved with the 'fakeUser'
  * object value.
  */
-const fetchUser = jest.fn(url => {
-  return Promise.resolve(fakeUser);
+const fetchUsersList = jest.fn(url => {
+  return Promise.resolve(fakeUsersList);
 });
 
-export default fetchUser;
+export default fetchUsersList;
