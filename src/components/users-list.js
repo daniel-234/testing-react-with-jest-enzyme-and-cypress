@@ -38,7 +38,7 @@ class UsersList extends Component {
           Here is a list of users. Click a link for more details.
         </p>
         <UnorderedList>
-          {users.map(user => <UserItem user={user} />)}
+          {users.map(user => <UserItem key={user.id} user={user} />)}
         </UnorderedList>
       </div>
     );
