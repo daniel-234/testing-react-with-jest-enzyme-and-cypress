@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It renders correctly the user details 1`] = `
+<li
+  className="css-qq6j6p"
+>
+  <div>
+    <picture>
+      <source
+        media="(min-width: 800px)"
+        srcSet="../../images/avatar1_small.jpg"
+      />
+      <source
+        media="(min-width: 300px)"
+        srcSet="../../images/avatar1.jpg"
+      />
+      <img
+        alt="Avatar image"
+        src="../../images/avatar1_small.jpg"
+      />
+    </picture>
+    <div>
+      <p>
+        Leanne Graham
+      </p>
+      <p>
+        Bret
+      </p>
+    </div>
+  </div>
+  <a
+    href="/1"
+    onClick={[Function]}
+  >
+    User Details
+  </a>
+</li>
+`;
