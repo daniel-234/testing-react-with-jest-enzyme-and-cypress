@@ -18,12 +18,6 @@ test('A user is displayed as a list item', () => {
 
   const wrapper = shallow(<UserItem user={fakeUser} />);
 
-  console.log(
-    wrapper
-      .find('div')
-      .at(1)
-      .children()
-  );
   expect(
     wrapper
       .find('div')

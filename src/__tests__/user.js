@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import User from '../components/user';
 
-test('It returns the right details once the data has been fetched', () => {
+test('It returns the right details of a user', () => {
   const fakeUser = {
     id: 1,
     name: 'Leanne Graham',
@@ -18,15 +18,6 @@ test('It returns the right details once the data has been fetched', () => {
 
   const wrapper = shallow(<User user={fakeUser} />);
 
-  // await flushPromises();
-  // wrapper.update();
-
-  console.log(
-    wrapper
-      .find('div')
-      .at(2)
-      .children()
-  );
   // Here we are targeting the third div in the User component,
   // that's the one that contains the 5 paragraphs.
   // Remember that the result of 'find' is zero-based.

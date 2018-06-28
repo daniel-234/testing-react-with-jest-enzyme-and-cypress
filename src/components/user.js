@@ -51,7 +51,7 @@ const User = props => {
             srcSet="../../images/avatar2_small.jpg"
             media="(min-width: 70px)"
           />
-          <img src="../../images/avatar2_large.jpg" alt="Avatar image" />
+          <img src="../../images/avatar2_large.jpg" alt="Avatar" />
         </picture>
         <div className={details}>
           <p>Username: {user.username}</p>

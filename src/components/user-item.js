@@ -9,7 +9,6 @@ const styles = css`
 
 const UserItem = props => {
   const user = props.user;
-  console.log(user.id);
   return (
     <li key={user.id} className={styles}>
       <div>
@@ -22,7 +21,7 @@ const UserItem = props => {
             srcSet="../../images/avatar1.jpg"
             media="(min-width: 300px)"
           />
-          <img src="../../images/avatar1_small.jpg" alt="Avatar image" />
+          <img src="../../images/avatar1_small.jpg" alt="Avatar" />
         </picture>
         <div>
           <p>{user.name}</p>

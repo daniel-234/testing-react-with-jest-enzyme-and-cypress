@@ -37,7 +37,6 @@ describe('The App component', () => {
     const wrapper = shallow(<App />);
     const state = wrapper.state();
 
-    console.log(state);
     expect(state.users).toEqual([]);
   });
 
@@ -48,7 +47,7 @@ describe('The App component', () => {
     wrapper.update();
 
     const state = wrapper.state();
-    console.log(state);
+
     expect(state.users).toHaveLength(3);
     expect(state.users[1]).toEqual({
       id: 2,

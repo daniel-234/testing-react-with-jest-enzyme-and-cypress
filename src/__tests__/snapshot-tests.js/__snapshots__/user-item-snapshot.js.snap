@@ -15,7 +15,7 @@ exports[`It renders correctly the user details 1`] = `
         srcSet="../../images/avatar1.jpg"
       />
       <img
-        alt="Avatar image"
+        alt="Avatar"
         src="../../images/avatar1_small.jpg"
       />
     </picture>
