@@ -28,6 +28,7 @@ class App extends Component {
         {this.state.users.map(user => (
           <Route
             key={user.id}
+            exact
             path={`/${user.id}`}
             render={() => <User user={user} />}
           />
