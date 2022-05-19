@@ -1,5 +1,8 @@
 # Testing React with Jest, Enzyme and Cypress
 
+
+## :red_circle: This repository is now archived!
+
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Cypress.io tests](https://img.shields.io/badge/cypress.io-tests-green.svg?style=flat-square)](https://cypress.io)
 
